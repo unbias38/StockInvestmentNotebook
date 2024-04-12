@@ -388,12 +388,12 @@ def FindingHeadShoulderPatterns(prices, order = 1, early_find = False) :
         pattern_points.append([pattern.l_shoulder,in_prices.iloc[pattern.l_shoulder]['Date'].strftime("%Y-%m-%d"),pattern.l_shoulder_p])
         # 頭肩型態的左腋窩
         pattern_points.append([pattern.l_armpit,in_prices.iloc[pattern.l_armpit]['Date'].strftime("%Y-%m-%d"),pattern.l_armpit_p])
-        # 頭肩型態的右肩
-        pattern_points.append([pattern.r_shoulder,in_prices.iloc[pattern.r_shoulder]['Date'].strftime("%Y-%m-%d"),pattern.r_shoulder_p])
-        # 頭肩型態的右腋窩
-        pattern_points.append([pattern.r_armpit,in_prices.iloc[pattern.r_armpit]['Date'].strftime("%Y-%m-%d"),pattern.r_armpit_p])
         # 頭肩型態的頭
         pattern_points.append([pattern.head,in_prices.iloc[pattern.head]['Date'].strftime("%Y-%m-%d"),pattern.head_p])
+        # 頭肩型態的右腋窩
+        pattern_points.append([pattern.r_armpit,in_prices.iloc[pattern.r_armpit]['Date'].strftime("%Y-%m-%d"),pattern.r_armpit_p])
+        # 頭肩型態的右肩
+        pattern_points.append([pattern.r_shoulder,in_prices.iloc[pattern.r_shoulder]['Date'].strftime("%Y-%m-%d"),pattern.r_shoulder_p])
         
         # 頸線開始與結束日期及價格
         neckline_start_date  = in_prices.iloc[pattern.start_i]['Date'].strftime("%Y-%m-%d")
@@ -405,6 +405,7 @@ def FindingHeadShoulderPatterns(prices, order = 1, early_find = False) :
         # 頭肩型態的頭部資訊
         head_info = { 'width': pattern.head_width, 'height': pattern.head_height }
         
+        # 頭肩頂
         patterns.append({ 'type': 'Top', 'points': pattern_points, 'neckline': neckline_info, 'head': head_info })
     for pattern in ihs_patterns:
         pattern_points = []
@@ -412,12 +413,12 @@ def FindingHeadShoulderPatterns(prices, order = 1, early_find = False) :
         pattern_points.append([pattern.l_shoulder,in_prices.iloc[pattern.l_shoulder]['Date'].strftime("%Y-%m-%d"),pattern.l_shoulder_p])
         # 頭肩型態的左腋窩
         pattern_points.append([pattern.l_armpit,in_prices.iloc[pattern.l_armpit]['Date'].strftime("%Y-%m-%d"),pattern.l_armpit_p])
-        # 頭肩型態的右肩
-        pattern_points.append([pattern.r_shoulder,in_prices.iloc[pattern.r_shoulder]['Date'].strftime("%Y-%m-%d"),pattern.r_shoulder_p])
-        # 頭肩型態的右腋窩
-        pattern_points.append([pattern.r_armpit,in_prices.iloc[pattern.r_armpit]['Date'].strftime("%Y-%m-%d"),pattern.r_armpit_p])
         # 頭肩型態的頭
         pattern_points.append([pattern.head,in_prices.iloc[pattern.head]['Date'].strftime("%Y-%m-%d"),pattern.head_p])
+        # 頭肩型態的右腋窩
+        pattern_points.append([pattern.r_armpit,in_prices.iloc[pattern.r_armpit]['Date'].strftime("%Y-%m-%d"),pattern.r_armpit_p])
+        # 頭肩型態的右肩
+        pattern_points.append([pattern.r_shoulder,in_prices.iloc[pattern.r_shoulder]['Date'].strftime("%Y-%m-%d"),pattern.r_shoulder_p])
         
         # 頸線開始與結束日期及價格
         neckline_start_date  = in_prices.iloc[pattern.start_i]['Date'].strftime("%Y-%m-%d")
